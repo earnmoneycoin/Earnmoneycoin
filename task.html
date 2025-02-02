@@ -195,10 +195,10 @@
             // Open the task link (for example, YouTube, Follow Action)
             window.open(link, "_blank");
 
-            // Get the current balance from localStorage
+            // Get the current balance
             let currentBalance = parseInt(localStorage.getItem('balance')) || 0;
 
-            // Add the reward to the current balance
+            // Add the reward to current balance
             currentBalance += reward;
 
             // Display updated balance
@@ -207,16 +207,12 @@
             // Save the updated balance to localStorage
             localStorage.setItem('balance', currentBalance);
 
-            // Mark this task as completed by saving the task ID to localStorage
+            // Mark this task as completed by saving the task ID
             localStorage.setItem(taskId, true);
-            
-            // Disable the claim button after completion
-            document.getElementById(taskId).querySelector('.task-button').disabled = true;
         }
 
         // On page load, retrieve the balance from localStorage and update the display
         window.onload = function() {
-            // Retrieve the balance from localStorage and update the UI
             let savedBalance = localStorage.getItem('balance');
             if (savedBalance !== null) {
                 document.getElementById("balance").innerText = savedBalance;
@@ -233,3 +229,4 @@
     </script>
 </body>
 </html>
+
