@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitget Mining Countdown</title>
+    <title>Bitcoin Mining Countdown</title>
     <style>
         * {
             margin: 0;
@@ -28,91 +28,74 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
         }
 
-        .logo {
-            width: 150px;
-            margin: 20px auto;
-        }
-
         .title {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: bold;
-            margin: 15px 0;
+            margin-top: 20px;
             color: #00c6ff;
         }
 
         .timer {
             font-size: 48px;
             font-weight: bold;
-            margin: 10px 0 30px;
+            margin: 15px 0;
             letter-spacing: 2px;
             transition: all 0.5s ease-in-out;
         }
 
-        .btn {
-            display: block;
-            width: 90%;
-            padding: 15px;
-            margin: 15px auto;
-            background: #00c6ff;
-            border: none;
-            border-radius: 10px;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s ease;
-        }
-
-        .btn:hover {
-            background: #0084ff;
-            transform: translateY(-3px);
-        }
-
-        .bottom-nav {
+        /* Bitcoin Icon Grid */
+        .bitcoin-container {
             display: flex;
-            justify-content: space-around;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: #111;
-            padding: 10px 0;
-            border-top: 1px solid #333;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
         }
 
-        .bottom-nav img {
-            width: 28px;
-            height: 28px;
-            filter: brightness(0.9);
-            transition: 0.3s ease;
-        }
-
-        .bottom-nav img:hover {
-            filter: brightness(1.5);
-            transform: scale(1.1);
+        .bitcoin-icon {
+            width: 40px;
+            height: 40px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Bitget Logo -->
-        <img src="bitget-logo.png" alt="Bitget Logo" class="logo"> 
-
         <!-- Mining End Title -->
         <div class="title">Mining Ends In:</div>
 
         <!-- Countdown Timer -->
         <div class="timer" id="countdown">32D 00H 00M 00S</div>
 
-        <!-- Share Story Button -->
-        <button class="btn">Share Story (+50)</button>
-    </div>
-
-    <!-- Bottom Navigation Bar -->
-    <div class="bottom-nav">
-        <img src="home-icon.png" alt="Home"> 
-        <img src="flash-icon.png" alt="Flash"> 
-        <img src="hide-icon.png" alt="Hide"> 
+        <!-- Bitcoin Icons Grid -->
+        <div class="bitcoin-container">
+            <!-- 25 Bitcoin icons from an online source -->
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="bitcoin-icon" alt="Bitcoin">
+        </div>
     </div>
 
     <script>
