@@ -157,7 +157,6 @@
                 </div>
                 <button class="task-button" onclick="completeTask(100, 'http://www.youtube.com/@Moneycoin-k8s-')">💰 Claim</button>
             </div>
-            <!-- Repeat for other tasks -->
         </div>
     </section>
 
@@ -193,11 +192,11 @@
             }
         }
 
-        // Example function to update balance after task completion
+        // Function to update balance after task completion
         function completeTask(reward, link) {
             // Logic to open the link (e.g., YouTube video, follow action, etc.)
             window.open(link, "_blank");
-            
+
             // Get the current balance
             let currentBalance = parseInt(document.getElementById("balance").innerText);
 
