@@ -91,10 +91,25 @@
             background-color: #a2aaa0;
         }
 
-        .timer {
+        /* Countdown Timer Box */
+        .timer-box {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #444;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .timer-box p {
             font-size: 24px;
-            margin-top: 30px;
             color: #ffcc00;
+            margin: 0;
+        }
+
+        .timer-box span {
+            font-weight: bold;
         }
 
         @media (max-width: 600px) {
@@ -110,12 +125,21 @@
             .task h4 {
                 font-size: 16px;
             }
+
+            .timer-box p {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
 <body>
    
     <br><br>
+
+    <!-- Countdown Timer in Box -->
+    <div class="timer-box">
+        <p>Mining chance ends in: <span id="countdown"></span></p>
+    </div>
 
     <div id="balance-container">
         <h2><b></b></h2>
@@ -129,7 +153,7 @@
         <div class="task">
             <div class="task-detail">
                 <div class="task-image">
-                    <img src="material/images/logo.png" width="45px" alt="">
+                    <img src="material/images/logo.png" width="45px" alt="Task 1">
                 </div>
                 <div>
                     <h4>Visit Our YouTube Channel</h4>
@@ -145,7 +169,7 @@
         <div class="task">
             <div class="task-detail">
                 <div class="task-image">
-                    <img src="material/images/logo.png" width="45px" alt="">
+                    <img src="material/images/logo.png" width="45px" alt="Task 2">
                 </div>
                 <div>
                     <h4>Visit Our YouTube Channel</h4>
@@ -158,11 +182,6 @@
             <button class="task-button" onclick="window.location.href='http://www.youtube.com/@moneycoinofficial'">💰 Visit YouTube 2</button>
         </div>
 
-    </div>
-
-    <!-- Timer to show countdown -->
-    <div class="timer">
-        <p>Mining end: <span id="countdown"></span></p>
     </div>
 
     <br>
@@ -229,3 +248,4 @@
     </script>
 </body>
 </html>
+
