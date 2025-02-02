@@ -126,7 +126,7 @@
 
     <section class="tasks scrollable">
         <div class="task-container">
-            <div class="task">
+            <div class="task" id="task1">
                 <div class="task-detail">
                     <div class="task-image">
                         <img src="material/images/you.gif" width="45px" alt="">
@@ -139,10 +139,10 @@
                         </div>
                     </div>
                 </div>
-                <button class="task-button" onclick="completeTask(100, 'http://www.youtube.com/@moneycoinofficial')">💰 Claim</button>
+                <button class="task-button" onclick="completeTask(100, 'http://www.youtube.com/@moneycoinofficial', 'task1')">💰 Claim</button>
             </div>
 
-            <div class="task">
+            <div class="task" id="task2">
                 <div class="task-detail">
                     <div class="task-image">
                         <img src="material/images/tele.png" width="45px" alt="">
@@ -155,7 +155,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="task-button" onclick="completeTask(100, 'http://www.youtube.com/@Moneycoin-k8s-')">💰 Claim</button>
+                <button class="task-button" onclick="completeTask(100, 'http://www.youtube.com/@Moneycoin-k8s-', 'task2')">💰 Claim</button>
             </div>
         </div>
     </section>
@@ -185,7 +185,13 @@
 
     <script>
         // Function to update balance after task completion
-        function completeTask(reward, link) {
+        function completeTask(reward, link, taskId) {
+            // Check if task is already completed
+            if (localStorage.getItem(taskId)) {
+                alert("You have already completed this task!");
+                return; // Prevent completing the task again
+            }
+
             // Open the task link (for example, YouTube, Follow Action)
             window.open(link, "_blank");
 
@@ -200,6 +206,9 @@
 
             // Save the updated balance to localStorage
             localStorage.setItem('balance', currentBalance);
+
+            // Mark this task as completed by saving the task ID
+            localStorage.setItem(taskId, true);
         }
 
         // On page load, retrieve the balance from localStorage and update the display
@@ -208,8 +217,15 @@
             if (savedBalance !== null) {
                 document.getElementById("balance").innerText = savedBalance;
             }
+
+            // Check if tasks are completed and disable buttons if they are
+            if (localStorage.getItem('task1')) {
+                document.getElementById('task1').querySelector('.task-button').disabled = true;
+            }
+            if (localStorage.getItem('task2')) {
+                document.getElementById('task2').querySelector('.task-button').disabled = true;
+            }
         }
     </script>
 </body>
 </html>
-
