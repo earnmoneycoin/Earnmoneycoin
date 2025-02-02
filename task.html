@@ -184,29 +184,32 @@
     </nav>
 
     <script>
-        // Load balance from localStorage when the page loads
+        // Function to update balance after task completion
+        function completeTask(reward, link) {
+            // Open the task link (for example, YouTube, Follow Action)
+            window.open(link, "_blank");
+
+            // Get the current balance
+            let currentBalance = parseInt(localStorage.getItem('balance')) || 0;
+
+            // Add the reward to current balance
+            currentBalance += reward;
+
+            // Display updated balance
+            document.getElementById("balance").innerText = currentBalance;
+
+            // Save the updated balance to localStorage
+            localStorage.setItem('balance', currentBalance);
+        }
+
+        // On page load, retrieve the balance from localStorage and update the display
         window.onload = function() {
             let savedBalance = localStorage.getItem('balance');
             if (savedBalance !== null) {
                 document.getElementById("balance").innerText = savedBalance;
             }
         }
-
-        // Function to update balance after task completion
-        function completeTask(reward, link) {
-            // Logic to open the link (e.g., YouTube video, follow action, etc.)
-            window.open(link, "_blank");
-
-            // Get the current balance
-            let currentBalance = parseInt(document.getElementById("balance").innerText);
-
-            // Update the balance
-            currentBalance += reward;
-            document.getElementById("balance").innerText = currentBalance;
-
-            // Save updated balance to localStorage
-            localStorage.setItem('balance', currentBalance);
-        }
     </script>
 </body>
 </html>
+
