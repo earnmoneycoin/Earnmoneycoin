@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -185,10 +185,10 @@
     </nav>
 
     <script>
-        // Load balance from localStorage
+        // Load balance from localStorage when the page loads
         window.onload = function() {
             let savedBalance = localStorage.getItem('balance');
-            if (savedBalance) {
+            if (savedBalance !== null) {
                 document.getElementById("balance").innerText = savedBalance;
             }
         }
@@ -198,11 +198,13 @@
             // Logic to open the link (e.g., YouTube video, follow action, etc.)
             window.open(link, "_blank");
             
-            // Update balance
+            // Get the current balance
             let currentBalance = parseInt(document.getElementById("balance").innerText);
+
+            // Update the balance
             currentBalance += reward;
             document.getElementById("balance").innerText = currentBalance;
-            
+
             // Save updated balance to localStorage
             localStorage.setItem('balance', currentBalance);
         }
