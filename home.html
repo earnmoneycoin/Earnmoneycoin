@@ -91,6 +91,12 @@
             background-color: #a2aaa0;
         }
 
+        .timer {
+            font-size: 24px;
+            margin-top: 30px;
+            color: #ffcc00;
+        }
+
         @media (max-width: 600px) {
             .task-container {
                 max-width: 100%;
@@ -154,6 +160,11 @@
 
     </div>
 
+    <!-- Timer to show countdown -->
+    <div class="timer">
+        <p>Mining chance left: <span id="countdown"></span></p>
+    </div>
+
     <br>
     <div class="coin-container">
         <div class="task-image">
@@ -185,5 +196,36 @@
 
     <script src="material/js/js.js"></script>
     <script src="material/js/main.js"></script>
+
+    <!-- Countdown Timer Script -->
+    <script>
+        // Set the date we're counting down to (45 days from now)
+        var countDownDate = new Date().getTime() + (45 * 24 * 60 * 60 * 1000);
+
+        // Update the countdown every 1 second
+        var x = setInterval(function() {
+
+            // Get the current time
+            var now = new Date().getTime();
+
+            // Find the time remaining
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes, and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            // If the countdown is finished, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
