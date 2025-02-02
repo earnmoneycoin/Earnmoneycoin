@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TON Wallet Connection</title>
     <link rel="stylesheet" href="material/css/w.css">
+    <script src="https://unpkg.com/@tonconnect/sdk"></script>
 </head>
 
 <body>
@@ -12,7 +13,6 @@
     <!-- Open Wallet Pop-up Button -->
     <button id="openModalBtn" class="open-button">Connect TON Wallet</button>
    
-  
     <!-- Modal Window -->
     <div id="walletModal" class="modal">
         <div class="modal-content">
@@ -26,9 +26,36 @@
             </div>
 
             <div id="statusMessage" class="status"></div>
+            <div id="walletAddress" class="wallet-address"></div>
         </div>
     </div>
 
-    <script src="material/js/w.js"></script>
+    <!-- JavaScript Code -->
+    <script>
+        // Import TON Connect SDK
+        const tonConnect = new TONConnect();
+
+        // Select Wallet Connect Button
+        const connectWalletBtn = document.getElementById("connectWallet");
+        const statusMessage = document.getElementById("statusMessage");
+        const walletAddressDiv = document.getElementById("walletAddress");
+
+        // Wallet Connection Function
+        async function connectWallet() {
+            try {
+                const wallet = await tonConnect.connectWallet();  // Prompt User to Connect
+                statusMessage.innerHTML = `<p style="color: green;">✅ Wallet Connected!</p>`;
+                walletAddressDiv.innerHTML = `📌 Wallet Address: ${wallet.account.address}`;  // Show Address
+                console.log("Wallet Address:", wallet.account.address);  // Show Address in Console
+            } catch (error) {
+                statusMessage.innerHTML = `<p style="color: red;">❌ Connection Failed!</p>`;
+                console.error("Wallet Connection Error:", error);
+            }
+        }
+
+        // Click Event for Connect Button
+        connectWalletBtn.addEventListener("click", connectWallet);
+    </script>
+
 </body>
 </html>
